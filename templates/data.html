@@ -1,0 +1,25 @@
+{% load static %}
+
+<body>
+    <h1 class="golf-bg">Birdie Boyz</h1>
+    <ul class="nav-top" id="nav-home">
+        <li><a href="{% url 'birdie_app:home' %}">Home</a></li>
+        <li><a href="bryan.html">Bryan</a></li>
+        <li><a href="david.html">David</a></li>
+        <li><a href="greg.html">Greg</a></li>
+        <li><a href="steve.html">Steve</a></li>
+        <li><a href="data.html">Data</a></li>
+    </ul>
+    <h3>All Stats</h3>
+    <br>
+    {% comment %} <div id="allData"></div> {% endcomment %}
+    <div>
+        {% for stat in data %}
+            <p><strong>Player:</strong> {{ stat.player }}</p>
+            <p><strong>Date:</strong> {{ stat.date }}</p>
+            <p><strong>Course:</strong> {{ stat.course }}</p>
+            <p><strong>Hole:</strong> {{ stat.hole }}</p>
+        {% endfor %}
+    </div>
+    {% comment %} <script src="scripts.js"></script> {% endcomment %}
+</body>

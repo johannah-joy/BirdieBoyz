@@ -1,0 +1,61 @@
+{% load static %}
+
+<body>
+    <h1 class="golf-bg">Birdie Boyz</h1>
+    <ul class="nav-top" id="nav-home">
+        <li><a href="{% url 'birdie_app:home' %}">Home</a></li>
+        {% comment %} <li><a href="{% url 'birdie_app:bryan' %}">Bryan</a></li>
+        <li><a href="{% url 'birdie_app:david' %}">David</a></li>
+        <li><a href="{% url 'birdie_app:greg' %}">Greg</a></li>
+        <li><a href="{% url 'birdie_app:steve' %}">Steve</a></li> {% endcomment %}
+        <li><a href="{% url 'birdie_app:data' %}">Data</a></li>
+    </ul>
+    <img src="BirdieBoyz.jpeg" alt="Photo of the Birdie Boyz">
+    <div id="group-total">
+        <h4>Group Total: <span id="score">0</span></h4>
+        <span id="groupOutput"></span>
+    </div>
+    
+    <form action="{% url 'birdie_app:data' %}" method="post">
+        {% csrf_token %}
+        <label for="player">Player:</label><br>
+        <select name="player" id="player" required>
+            <option value="Bryan">Bryan</option>
+            <option value="David">David</option>
+            <option value="Greg">Greg</option>
+            <option value="Steve">Steve</option>
+        </select>
+        <br><br>
+        <label for="date">Date:</label><br>
+        <input type="date" name="date" required>
+        <br><br>
+        <label for="course">Golf Course:</label><br>
+        <input type="text" name="course" placeholder="Golf Course" required>
+        <br><br>
+        <label for="hole">Hole #:</label><br>
+        <select name="hole" id="hole" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+        </select>
+        <br><br><br>
+        <button id="submit" onclick="birdies()">submit</button>
+        <br><br>
+    </form>
+    {% comment %} <script src="scripts.js"></script> {% endcomment %}
+</body>
