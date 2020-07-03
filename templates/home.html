@@ -1,5 +1,13 @@
 {% load static %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'scripts.js' %}">
+    <title>Birdie Boyz</title>
+</head>
 <body>
     <h1 class="golf-bg">Birdie Boyz</h1>
     <ul class="nav-top" id="nav-home">
@@ -10,7 +18,7 @@
         <li><a href="{% url 'birdie_app:steve' %}">Steve</a></li> {% endcomment %}
         <li><a href="{% url 'birdie_app:data' %}">Data</a></li>
     </ul>
-    <img src="BirdieBoyz.jpeg" alt="Photo of the Birdie Boyz">
+    <img src="{% static 'BirdieBoyz.jpeg' %}" alt="Photo of the Birdie Boyz">
     <div id="group-total">
         <h4>Group Total: <span id="score">0</span></h4>
         <span id="groupOutput"></span>

@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django import forms
+from datetime import date
 
 # Create your models here.
 
@@ -12,7 +13,7 @@ class Birdie(models.Model):
         ("Steve", "Steve"),
     )
     player = models.CharField(max_length=10, null=True, blank=True, choices = players)
-    date = models.DateField()
+    date = models.DateField(null=True)
     course = models.CharField(max_length=100, null=True, blank=True)
     holes =( 
         ("1", "1"),

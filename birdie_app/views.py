@@ -39,5 +39,6 @@ def data(request):
     hole_input = request.POST.get('hole')
     Birdie.objects.create(player=player_input, date=date_input, course=course_input, hole=hole_input)
     stats = Birdie.objects.all()
-    context = {'data': stats}
+    # context = {'data': stats}
+    context = {'stats': stats}
     return render(request, 'data.html', context)
