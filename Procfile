@@ -1,1 +1,0 @@
-web: gunicorn birdie_boyz.wsgi --log-file -
