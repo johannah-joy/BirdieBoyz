@@ -1,1 +1,1 @@
-web: gunicorn birdie_boyz.wsgi --log-file -
+web: gunicorn birdie_boyz.wsgi
