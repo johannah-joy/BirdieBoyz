@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Birdie
 from .forms import BirdieForm
+from django.views import generic
 
 # Create your views here.
 
@@ -33,12 +34,33 @@ def home(request):
         'form': form_class,})
 
 def data(request):
-    player_input = request.POST.get('player')
-    date_input = request.POST.get('date')
-    course_input = request.POST.get('course')
-    hole_input = request.POST.get('hole')
-    Birdie.objects.create(player=player_input, date=date_input, course=course_input, hole=hole_input)
-    stats = Birdie.objects.all()
-    # context = {'data': stats}
-    context = {'stats': stats}
-    return render(request, 'data.html', context)
+    # if form submitted:
+        player_input = request.POST.get('player')
+        date_input = request.POST.get('date')
+        course_input = request.POST.get('course')
+        hole_input = request.POST.get('hole')
+        Birdie.objects.create(player=player_input, date=date_input, course=course_input, hole=hole_input)
+        stats = Birdie.objects.all()
+        # context = {'data': stats}
+        context = {'stats': stats}
+        return render(request, 'data.html', context)
+    # else:
+    #     stats = Birdie.objects.all()
+    #     # context = {'data': stats}
+    #     context = {'stats': stats}
+    #     return render(request, 'data.html', context)
+
+class BryanView(generic.TemplateView):
+    # model = Birdie
+    # form_class = 
+    template_name = 'bryan.html'
+    # success_url = reverse_lazy('home')
+
+class DavidView(generic.TemplateView):
+    template_name = 'david.html'
+
+class GregView(generic.TemplateView):
+    template_name = 'greg.html'
+
+class SteveView(generic.TemplateView):
+    template_name = 'steve.html'

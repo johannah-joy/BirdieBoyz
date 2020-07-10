@@ -5,13 +5,13 @@ from . import views
 
 app_name = 'birdie_app'
 urlpatterns = [
-    path('home/', views.home, name='home'),
+    # path('home/', views.home, name='home'),
     path('data/', views.data, name='data'),
     # how to make data transfer to personal html
-    # bryan
-    # david
-    # greg
-    # steve
+    path('bryan.html/', views.BryanView.as_view(template_name='bryan.html'), name='bryan'),
+    path('david.html/', views.DavidView.as_view(template_name='david.html'), name='david'),
+    path('greg.html/', views.GregView.as_view(template_name='greg.html'), name='greg'),
+    path('steve/', views.SteveView.as_view(template_name='steve.html'), name='steve'),
 ]
 
 urlpatterns += [
