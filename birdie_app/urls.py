@@ -8,9 +8,9 @@ urlpatterns = [
     # path('home/', views.home, name='home'),
     path('data/', views.data, name='data'),
     # how to make data transfer to personal html
-    path('bryan.html/', views.BryanView.as_view(template_name='bryan.html'), name='bryan'),
-    path('david.html/', views.DavidView.as_view(template_name='david.html'), name='david'),
-    path('greg.html/', views.GregView.as_view(template_name='greg.html'), name='greg'),
+    path('bryan/', views.BryanView.as_view(template_name='bryan.html'), name='bryan'),
+    path('david/', views.DavidView.as_view(template_name='david.html'), name='david'),
+    path('greg/', views.GregView.as_view(template_name='greg.html'), name='greg'),
     path('steve/', views.SteveView.as_view(template_name='steve.html'), name='steve'),
 ]
 
