@@ -27,10 +27,10 @@ def home(request):
         if form.is_valid(): 
             form.save()
             birdies = Birdie.objects.all()
-            return render(request, 'data.html', {'birdies': birdies})
+            return render(request, '/data.html', {'birdies': birdies})
     else:
         form_class = BirdieForm
-    return render(request, "home.html", {
+    return render(request, "/home.html", {
         'form': form_class,})
 
 def data(request):
@@ -43,7 +43,7 @@ def data(request):
         stats = Birdie.objects.all()
         # context = {'data': stats}
         context = {'stats': stats}
-        return render(request, 'data.html', context)
+        return render(request, '/data.html', context)
     # else:
     #     stats = Birdie.objects.all()
     #     # context = {'data': stats}

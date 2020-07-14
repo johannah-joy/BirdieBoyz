@@ -5,7 +5,7 @@ from . import views
 
 app_name = 'birdie_app'
 urlpatterns = [
-    # path('home/', views.home, name='home'),
+    # path('/', views.home, name='home'),
     path('data/', views.data, name='data'),
     # how to make data transfer to personal html
     path('bryan/', views.BryanView.as_view(template_name='bryan.html'), name='bryan'),
