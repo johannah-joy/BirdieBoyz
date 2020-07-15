@@ -1,24 +1,21 @@
-{% load static %}
+{% comment %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'scripts.js' %}">
     <title>Birdie Boyz</title>
 </head>
 <body>
-    <h1 id="davidBg">Birdie Boyz</h1>
-    <ul class="nav-top" id="nav-david">
+    {% block content %} <h1 class="golf-bg">Birdie Boyz</h1> {% endblock content %}
+    {% block content %} <ul class="nav-top" id="nav-home">
         <li><a href="{% url 'birdie_app:home' %}">Home</a></li>
         <li><a href="{% url 'birdie_app:bryan' %}">Bryan</a></li>
         <li><a href="{% url 'birdie_app:david' %}">David</a></li>
         <li><a href="{% url 'birdie_app:greg' %}">Greg</a></li>
         <li><a href="{% url 'birdie_app:steve' %}">Steve</a></li>
         <li><a href="{% url 'birdie_app:data' %}">Data</a></li>
-    </ul>
-    <h3>David's Stats</h3>
-    <br>
-    <div id="davidData"></div>
-    {% comment %} <script src="scripts.js"></script> {% endcomment %}
-</body>
+    </ul> {% endblock content %}
+</body> {% endcomment %}

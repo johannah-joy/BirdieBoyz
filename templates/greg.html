@@ -1,4 +1,5 @@
 {% load static %}
+{% comment %} {% extends "base.html" %} {% endcomment %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,12 +11,12 @@
 <body>
     <h1 class="jumbotron" id="gregBg">Birdie Boyz</h1>
     <ul class="nav-top" id="nav-greg">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="bryan.html">Bryan</a></li>
-        <li><a href="david.html">David</a></li>
-        <li><a href="greg.html">Greg</a></li>
-        <li><a href="steve.html">Steve</a></li>
-        <li><a href="data.html">Data</a></li>
+        <li><a href="{% url 'birdie_app:home' %}">Home</a></li>
+        <li><a href="{% url 'birdie_app:bryan' %}">Bryan</a></li>
+        <li><a href="{% url 'birdie_app:david' %}">David</a></li>
+        <li><a href="{% url 'birdie_app:greg' %}">Greg</a></li>
+        <li><a href="{% url 'birdie_app:steve' %}">Steve</a></li>
+        <li><a href="{% url 'birdie_app:data' %}">Data</a></li>
     </ul>
     <h3>Greg's Stats</h3>
     <br>
