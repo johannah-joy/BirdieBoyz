@@ -84,8 +84,14 @@ WSGI_APPLICATION = 'birdie_boyz.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd110qb4ag7tvgh',
+        'USER': 'zdguqsorqqkill',
+        'PASSWORD': '4f44ec712578e3636939ebffb4121f4c425605f97d706c705fb3783069dd02f0',
+        'HOST': 'ec2-18-214-119-135.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -143,6 +149,6 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-import psycopg2
-DATABASE_URL = os.environ['DATABASE_URL']
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+# import psycopg2
+# DATABASE_URL = os.environ['DATABASE_URL']
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
