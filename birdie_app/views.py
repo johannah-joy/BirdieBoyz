@@ -23,15 +23,14 @@ def home(request):
     #     return render(request, "home.html", context)
 
     if request.method == 'POST':
-        form = BirdieForm(request.POST or None)
+        form = BirdieForm(request.POST)
         if form.is_valid(): 
             form.save()
             birdies = Birdie.objects.all()
             return render(request, 'data.html', {'birdies': birdies})
-    else:
-        form_class = BirdieForm
-    return render(request, 'home.html', {
-        'form': form_class,})
+    # else:
+    #     form_class = BirdieForm
+    return render(request, 'home.html', {})
 
 def data(request):
     # if form submitted:
@@ -64,3 +63,19 @@ class GregView(generic.TemplateView):
 
 class SteveView(generic.TemplateView):
     template_name = 'steve.html'
+
+# def get_name(request):
+#     # if this is a POST request we need to process the form data
+#     if request.method == 'POST':
+#         # create a form instance and populate it with data from the request:
+#         form = NameForm(request.POST)
+#         # check whether it's valid:
+#         if form.is_valid():
+#             # process the data in form.cleaned_data as required
+#             # ...
+#             # redirect to a new URL:
+#             return HttpResponseRedirect('/thanks/')
+#     # if a GET (or any other method) we'll create a blank form
+#     else:
+#         form = NameForm()
+#     return render(request, 'name.html', {'form': form})

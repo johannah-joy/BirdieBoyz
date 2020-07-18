@@ -20,29 +20,19 @@
     <h3>Bryan's Birdies</h3>
     <br>
     <div id="bryanBirdies"></div>
-    {% comment %} <table>
-        <tr>
-            <th>Player</th>
-            <th>Date</th>
-            <th>Golf Course</th>
-            <th>Hole #</th>
-        </tr>
-        <tr>
-            <td>Bryan</td>
-            <td>output of Player</td>
-        </tr>
-        <tr>
-            <td>David</td>
-            <td class="date">
-                <input type="date">
-            </td>
-            <td class="course">
-                <input type="text" placeholder="Golf Course">
-            </td>
-            <td>
-                <input type="number">
-            </td>
-        </tr>
-    </table> {% endcomment %}
-    {% comment %} <script src="scripts.js"></script> {% endcomment %}
+    <div>
+        {% for stat in stats %}
+            <table>
+                <tr>
+                    <td><strong>Player:</strong> {{ stat.player }}</td>
+                    <td><strong>Date:</strong> {{ stat.date }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Course:</strong> {{ stat.course }}</td>
+                    <td><strong>Hole:</strong> {{ stat.hole }}</td>
+                </tr>
+            </table>
+            <br><br>
+        {% endfor %}
+    </div>
 </body>

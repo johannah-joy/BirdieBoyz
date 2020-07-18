@@ -20,5 +20,19 @@
     <h3>Steve's Birdies</h3>
     <br>
     <div id="steveBirdies"></div>
-    {% comment %} <script src="scripts.js"></script> {% endcomment %}
+    <div>
+        {% for stat in stats %}
+            <table>
+                <tr>
+                    <td><strong>Player:</strong> {{ stat.player }}</td>
+                    <td><strong>Date:</strong> {{ stat.date }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Course:</strong> {{ stat.course }}</td>
+                    <td><strong>Hole:</strong> {{ stat.hole }}</td>
+                </tr>
+            </table>
+            <br><br>
+        {% endfor %}
+    </div>
 </body>
