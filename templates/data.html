@@ -17,22 +17,23 @@
         <li><a href="{% url 'birdie_app:steve' %}">Steve</a></li>
         <li><a href="{% url 'birdie_app:data' %}">Data</a></li>
     </ul>
-    <h3>All Birdies</h3>
-    <br>
-    {% comment %} <div id="allData"></div> {% endcomment %}
-    <div>
-        {% for stat in stats %}
-            <table>
-                <tr>
-                    <td><strong>Player:</strong> {{ stat.player }}</td>
-                    <td><strong>Date:</strong> {{ stat.date }}</td>
-                </tr>
-                <tr>
-                    <td><strong>Course:</strong> {{ stat.course }}</td>
-                    <td><strong>Hole:</strong> {{ stat.hole }}</td>
-                </tr>
-            </table>
-            <br><br>
-        {% endfor %}
+    <div align="center">
+        <h3>All Birdies</h3>
+        <br>
+        <div>
+            {% for stat in stats %}
+                <table>
+                    <tr>
+                        <td><strong>Player:</strong> {{ stat.player }}</td>
+                        <td><strong>Date:</strong> {{ stat.date }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Course:</strong> {{ stat.course }}</td>
+                        <td><strong>Hole:</strong> {{ stat.hole }}</td>
+                    </tr>
+                </table>
+                <br><br>
+            {% endfor %}
+        </div>
     </div>
 </body>
