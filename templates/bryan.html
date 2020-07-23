@@ -24,11 +24,13 @@
         {% for stat in stats %}
             <table>
                 <tr>
-                    <td><strong>Player:</strong> {{ stat.player }}</td>
+                    {% comment %} <td><strong>Player:</strong> {{ stat.player }}</td> {% endcomment %}
                     <td><strong>Date:</strong> {{ stat.date }}</td>
                 </tr>
                 <tr>
                     <td><strong>Course:</strong> {{ stat.course }}</td>
+                </tr>
+                <tr>
                     <td><strong>Hole:</strong> {{ stat.hole }}</td>
                 </tr>
             </table>
