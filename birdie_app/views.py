@@ -19,21 +19,18 @@ def home(request):
 def data(request):
     # # creating new object or instance in the database
     player_input = request.POST.get('player')
-    # print(player_input, '38')
-    date_input = request.POST.get('date')
-    course_input = request.POST.get('course')
-    hole_input = request.POST.get('hole')
-    Birdie.objects.create(player=player_input, date=date_input, course=course_input, hole=hole_input)
-    stats = Birdie.objects.all()
-    # context = {'data': stats}
-    context = {'stats': stats}
-    return render(request, 'data.html', context)
-    # return render(request, f'{player_input}.html', context)
-    # else:
-    #     stats = Birdie.objects.all()
-    #     # context = {'data': stats}
-    #     context = {'stats': stats}
-    #     return render(request, 'data.html', context)
+    if player_input == None:
+        stats = Birdie.objects.all()
+        context = {'stats': stats}
+        return render(request, 'data.html', context)
+    else:
+        date_input = request.POST.get('date')
+        course_input = request.POST.get('course')
+        hole_input = request.POST.get('hole')
+        Birdie.objects.create(player=player_input, date=date_input, course=course_input, hole=hole_input)
+        stats = Birdie.objects.all()
+        context = {'stats': stats}
+        return render(request, 'data.html', context)
 
 def bryan(request):
     stats = Birdie.objects.filter(player='Bryan')
