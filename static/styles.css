@@ -54,11 +54,7 @@ form {
 table, tr, td {
     border: 1px solid black;
     padding: 8px;
-  }
-
-/* tr:nth-child(even) {
-    background-color: #dddddd;
-} */
+}
 
 #bryanBg {
     text-align: center;
