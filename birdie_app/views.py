@@ -6,6 +6,8 @@ from django.views import generic
 # Create your views here.
 
 def home(request):
+    group = Birdie.objects.count()
+    # count = Birdie.objects.order_by('date')
     if request.method == 'POST':
         form = BirdieForm(request.POST)
         if form.is_valid(): 
@@ -14,7 +16,7 @@ def home(request):
             return render(request, 'data.html', {'birdies': birdies})
     else:
         form_class = BirdieForm
-    return render(request, 'home.html', {'form': form_class,})
+    return render(request, 'home.html', {'group': group, 'form': form_class,})
 
 def data(request):
     # # creating new object or instance in the database
@@ -34,28 +36,24 @@ def data(request):
 
 def bryan(request):
     stats = Birdie.objects.filter(player='Bryan')
-    # context = {'data': stats}
-    context = {'stats': stats}
+    bryancount = Birdie.objects.filter(player='Bryan').count()
     # return render(request, f'{player_input}.html', context)
-    return render(request, 'bryan.html', context)
+    return render(request, 'bryan.html', {'bryancount': bryancount, 'stats': stats})
 
 def david(request):
     stats = Birdie.objects.filter(player='David')
-    # context = {'data': stats}
-    context = {'stats': stats}
+    davidcount = Birdie.objects.filter(player='David').count()
     # return render(request, f'{player_input}.html', context)
-    return render(request, 'david.html', context)
+    return render(request, 'david.html', {'davidcount': davidcount, 'stats': stats})
 
 def greg(request):
     stats = Birdie.objects.filter(player='Greg')
-    # context = {'data': stats}
-    context = {'stats': stats}
+    gregcount = Birdie.objects.filter(player='Greg').count()
     # return render(request, f'{player_input}.html', context)
-    return render(request, 'greg.html', context)
+    return render(request, 'greg.html', {'gregcount': gregcount, 'stats': stats})
 
 def steve(request):
     stats = Birdie.objects.filter(player='Steve')
-    # context = {'data': stats}
-    context = {'stats': stats}
+    stevecount = Birdie.objects.filter(player='Steve').count()
     # return render(request, f'{player_input}.html', context)
-    return render(request, 'steve.html', context)
+    return render(request, 'steve.html', {'stevecount': stevecount, 'stats': stats})

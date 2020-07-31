@@ -19,10 +19,11 @@
         <li><a href="{% url 'birdie_app:data' %}">Data</a></li>
     </ul>
     <img src="{% static 'BirdieBoyz.jpeg' %}" alt="Photo of the Birdie Boyz">
-    <div id="group-total">
+    {% comment %} <div id="group-total">
         <h4>Group Total: <span id="score">0</span></h4>
         <span id="groupOutput"></span>
-    </div>
+    </div> {% endcomment %}
+    <h4 id="group-total">Group Total: {{ group }} </h4>
     
     <form action="{% url 'birdie_app:data' %}" method="post">
         {% csrf_token %}

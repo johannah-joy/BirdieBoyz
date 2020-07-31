@@ -19,10 +19,7 @@
     </ul>
     <div align="center">
         <h3>David's Birdies</h3>
-        <div id="davidTotal">
-            <h4>TOTAL: <span id="davidBirdies">0</span></h4>
-            <span id="davidOutput"></span>
-        </div>
+        <h4 id="davidTotal">TOTAL: {{ davidcount }}</h4>
         <div>
             {% for stat in stats %}
                 <table>
