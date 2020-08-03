@@ -7,7 +7,6 @@ from django.views import generic
 
 def home(request):
     group = Birdie.objects.count()
-    # count = Birdie.objects.order_by('date')
     if request.method == 'POST':
         form = BirdieForm(request.POST)
         if form.is_valid(): 
@@ -22,7 +21,7 @@ def data(request):
     # # creating new object or instance in the database
     player_input = request.POST.get('player')
     if player_input == None:
-        stats = Birdie.objects.all()
+        stats = Birdie.objects.all().order_by('-date', '-hole')
         context = {'stats': stats}
         return render(request, 'data.html', context)
     else:
@@ -30,18 +29,18 @@ def data(request):
         course_input = request.POST.get('course')
         hole_input = request.POST.get('hole')
         Birdie.objects.create(player=player_input, date=date_input, course=course_input, hole=hole_input)
-        stats = Birdie.objects.all()
+        stats = Birdie.objects.all().order_by('-date', '-hole')
         context = {'stats': stats}
         return render(request, 'data.html', context)
 
 def bryan(request):
-    stats = Birdie.objects.filter(player='Bryan')
+    stats = Birdie.objects.filter(player='Bryan').order_by('-date', '-hole')
     bryancount = Birdie.objects.filter(player='Bryan').count()
     # return render(request, f'{player_input}.html', context)
     return render(request, 'bryan.html', {'bryancount': bryancount, 'stats': stats})
 
 def david(request):
-    stats = Birdie.objects.filter(player='David')
+    stats = Birdie.objects.filter(player='David').order_by('-date', '-hole')
     davidcount = Birdie.objects.filter(player='David').count()
     # return render(request, f'{player_input}.html', context)
     return render(request, 'david.html', {'davidcount': davidcount, 'stats': stats})
@@ -53,7 +52,7 @@ def greg(request):
     return render(request, 'greg.html', {'gregcount': gregcount, 'stats': stats})
 
 def steve(request):
-    stats = Birdie.objects.filter(player='Steve')
+    stats = Birdie.objects.filter(player='Steve').order_by('-date', '-hole')
     stevecount = Birdie.objects.filter(player='Steve').count()
     # return render(request, f'{player_input}.html', context)
     return render(request, 'steve.html', {'stevecount': stevecount, 'stats': stats})

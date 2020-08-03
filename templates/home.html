@@ -24,6 +24,13 @@
         <span id="groupOutput"></span>
     </div> {% endcomment %}
     <h4 id="group-total">Group Total: {{ group }} </h4>
+
+    {% comment %} <form action="{% url 'birdie_app:data' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <br>
+      <button type="submit" id="submit" onclick="birdies()">submit</button><br><br><br>
+    </form> {% endcomment %}
     
     <form action="{% url 'birdie_app:data' %}" method="post">
         {% csrf_token %}
@@ -70,10 +77,6 @@
             <option value="18">18</option>
         </select>
         <br><br><br>
-        {% comment %} {% if field.player == 'Bryan' %}
-        {% if field.player == 'David' %}
-        {% if field.player == 'Greg' %}
-        {% if field.player == 'Steve' %} {% endcomment %}
         <button id="submit" onclick="birdies()">submit</button>
         <br><br>
     </form>
