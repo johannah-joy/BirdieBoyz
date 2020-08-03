@@ -47,7 +47,7 @@ def david(request):
     return render(request, 'david.html', {'davidcount': davidcount, 'stats': stats})
 
 def greg(request):
-    stats = Birdie.objects.filter(player='Greg')
+    stats = Birdie.objects.filter(player='Greg').order_by('-date', '-hole')
     gregcount = Birdie.objects.filter(player='Greg').count()
     # return render(request, f'{player_input}.html', context)
     return render(request, 'greg.html', {'gregcount': gregcount, 'stats': stats})

@@ -43,7 +43,7 @@ class Birdie(models.Model):
         ("17", "17"),
         ("18", "18"),
     )
-    hole = models.CharField(max_length=10, null=True, blank=True, choices = holes)
+    hole = models.IntegerField(null=True, blank=True, choices = holes)
 
     def __str__(self):
         return f'{self.player}, {self.date}, {self.course}, {self.hole}'
