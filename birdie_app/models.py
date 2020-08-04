@@ -20,6 +20,7 @@ class Birdie(models.Model):
         ("Colwood", "Colwood"),
         ("Heron Lakes Great Blue", "Heron Lakes Great Blue"),
         ("Heron Lakes Greenback", "Heron Lakes Greenback"),
+        ("Lewis River", "Lewis River"),
         ("Tri Mountain", "Tri Mountain"),
     )
     course = models.CharField(max_length=100, null=True, blank=True, choices = courses)
