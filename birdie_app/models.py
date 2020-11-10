@@ -21,6 +21,7 @@ class Birdie(models.Model):
         ("Heron Lakes Great Blue", "Heron Lakes Great Blue"),
         ("Heron Lakes Greenback", "Heron Lakes Greenback"),
         ("Lewis River", "Lewis River"),
+        ("Riverside Golf Club", "Riverside Golf Club"),
         ("Tri Mountain", "Tri Mountain"),
     )
     course = models.CharField(max_length=100, null=True, blank=True, choices = courses)
@@ -48,15 +49,3 @@ class Birdie(models.Model):
 
     def __str__(self):
         return f'{self.player}, {self.date}, {self.course}, {self.hole}'
-
-
-
-
-
-# from pantry_trackr.models import PantryItem
-
-# class PantryItemForm(forms.ModelForm):
-#     class Meta:
-#         model = PantryItem
-#         fields = ['item_name', 'quantity_min']
-#         # fields = "__all__"
