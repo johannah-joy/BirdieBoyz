@@ -23,6 +23,7 @@ class Birdie(models.Model):
         ("Lewis River", "Lewis River"),
         ("Riverside Golf Club", "Riverside Golf Club"),
         ("Tri Mountain", "Tri Mountain"),
+        ("Other", "Other"),
     )
     course = models.CharField(max_length=100, null=True, blank=True, choices = courses)
     holes =( 
