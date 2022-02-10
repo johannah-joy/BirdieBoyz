@@ -7,6 +7,7 @@ from django.views import generic
 
 def home(request):
     # group2021 = Birdie.objects.count()
+    group2022 = Birdie.objects.filter(date__year='2022').count()
     group2021 = Birdie.objects.filter(date__year='2021').count()
     group2020 = Birdie.objects.filter(date__year='2020').count()
     if request.method == 'POST':
@@ -17,7 +18,7 @@ def home(request):
             return render(request, 'data.html', {'birdies': birdies})
     else:
         form_class = BirdieForm
-    return render(request, 'home.html', {'group2021': group2021, 'group2020': group2020, 'form': form_class,})
+    return render(request, 'home.html', {'group2022': group2022, 'group2021': group2021, 'group2020': group2020, 'form': form_class,})
 
 def data(request):
     # # creating new object or instance in the database
@@ -37,28 +38,32 @@ def data(request):
 
 def bryan(request):
     stats = Birdie.objects.filter(player='Bryan').order_by('-date', '-hole')
+    bryancount2022 = Birdie.objects.filter(player='Bryan', date__year='2022').count()
     bryancount2021 = Birdie.objects.filter(player='Bryan', date__year='2021').count()
     bryancount2020 = Birdie.objects.filter(player='Bryan', date__year='2020').count()
     # return render(request, f'{player_input}.html', context)
-    return render(request, 'bryan.html', {'bryancount2021': bryancount2021, 'bryancount2020': bryancount2020, 'stats': stats})
+    return render(request, 'bryan.html', {'bryancount2022': bryancount2022, 'bryancount2021': bryancount2021, 'bryancount2020': bryancount2020, 'stats': stats})
 
 def david(request):
     stats = Birdie.objects.filter(player='David').order_by('-date', '-hole')
+    davidcount2022 = Birdie.objects.filter(player='David', date__year='2022').count()
     davidcount2021 = Birdie.objects.filter(player='David', date__year='2021').count()
     davidcount2020 = Birdie.objects.filter(player='David', date__year='2020').count()
     # return render(request, f'{player_input}.html', context)
-    return render(request, 'david.html', {'davidcount2021': davidcount2021, 'davidcount2020': davidcount2020, 'stats': stats})
+    return render(request, 'david.html', {'davidcount2022': davidcount2022, 'davidcount2021': davidcount2021, 'davidcount2020': davidcount2020, 'stats': stats})
 
 def greg(request):
     stats = Birdie.objects.filter(player='Greg').order_by('-date', '-hole')
+    gregcount2022 = Birdie.objects.filter(player='Greg', date__year='2022').count()
     gregcount2021 = Birdie.objects.filter(player='Greg', date__year='2021').count()
     gregcount2020 = Birdie.objects.filter(player='Greg', date__year='2020').count()
     # return render(request, f'{player_input}.html', context)
-    return render(request, 'greg.html', {'gregcount2021': gregcount2021, 'gregcount2020': gregcount2020, 'stats': stats})
+    return render(request, 'greg.html', {'gregcount2022': gregcount2022, 'gregcount2021': gregcount2021, 'gregcount2020': gregcount2020, 'stats': stats})
 
 def steve(request):
     stats = Birdie.objects.filter(player='Steve').order_by('-date', '-hole')
+    stevecount2022 = Birdie.objects.filter(player='Steve', date__year='2022').count()
     stevecount2021 = Birdie.objects.filter(player='Steve', date__year='2021').count()
     stevecount2020 = Birdie.objects.filter(player='Steve', date__year='2020').count()
     # return render(request, f'{player_input}.html', context)
-    return render(request, 'steve.html', {'stevecount2021': stevecount2021, 'stevecount2020': stevecount2020, 'stats': stats})
+    return render(request, 'steve.html', {'stevecount2022': stevecount2022, 'stevecount2021': stevecount2021, 'stevecount2020': stevecount2020, 'stats': stats})
