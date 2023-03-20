@@ -10,6 +10,7 @@ urlpatterns = [
     path('bryan/', views.bryan, name='bryan'),
     path('david/', views.david, name='david'),
     path('greg/', views.greg, name='greg'),
+    path('kara/', views.kara, name='kara'),
     path('steve/', views.steve, name='steve'),
 ]
 

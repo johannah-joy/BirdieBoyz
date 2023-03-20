@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>Birdie Boyz</title>
+    <title>Birdie Boyz & Birdie Girl</title>
 </head>
 <body>
     <h1 class="jumbotron" id="gregBg">Birdie Boyz</h1>
@@ -15,11 +15,13 @@
         <li><a href="{% url 'birdie_app:bryan' %}">Bryan</a></li>
         <li><a href="{% url 'birdie_app:david' %}">David</a></li>
         <li><a href="{% url 'birdie_app:greg' %}">Greg</a></li>
+        <li><a href="{% url 'birdie_app:kara' %}">Kara</a></li>
         <li><a href="{% url 'birdie_app:steve' %}">Steve</a></li>
         <li><a href="{% url 'birdie_app:data' %}">Data</a></li>
     </ul>
     <div align="center">
         <h3>Greg's Birdies</h3>
+        <h4 id="gregTotal">2023 TOTAL: {{ gregcount2023 }}</h4>
         <h4 id="gregTotal">2022 TOTAL: {{ gregcount2022 }}</h4>
         <h4 id="gregTotal">2021 TOTAL: {{ gregcount2021 }}</h4>
         <h4 id="gregTotal">2020 TOTAL: {{ gregcount2020 }}</h4>

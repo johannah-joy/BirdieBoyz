@@ -8,8 +8,8 @@
     <title>Birdie Boyz</title>
 </head>
 <body>
-    <h1 id="bryanBg">Birdie Boyz & Birdie Girl</h1>
-    <ul class="nav-top" id="nav-bryan">
+    <h1 id="davidBg">Birdie Boyz & Birdie Girl</h1>
+    <ul class="nav-top" id="nav-david">
         <li><a href="{% url 'birdie_app:home' %}">Home</a></li>
         <li><a href="{% url 'birdie_app:bryan' %}">Bryan</a></li>
         <li><a href="{% url 'birdie_app:david' %}">David</a></li>
@@ -19,11 +19,9 @@
         <li><a href="{% url 'birdie_app:data' %}">Data</a></li>
     </ul>
     <div align="center">
-        <h3>Bryan's Birdies</h3>
-        <h4 id="bryanTotal">2023 TOTAL: {{ bryancount2023 }}</h4>
-        <h4 id="bryanTotal">2022 TOTAL: {{ bryancount2022 }}</h4>
-        <h4 id="bryanTotal">2021 TOTAL: {{ bryancount2021 }}</h4>
-        <h4 id="bryanTotal">2020 TOTAL: {{ bryancount2020 }}</h4>
+        <h3>Kara's Birdies</h3>
+        <h4 id="davidTotal">2023 TOTAL: {{ karacount2023 }}</h4>
+        <h4 id="davidTotal">2022 TOTAL: {{ karacount2022 }}</h4>
         <div>
             {% for stat in stats %}
                 <table>
