@@ -9,16 +9,21 @@
     <title>Birdie Boyz</title>
 </head>
 <body>
-    <h1 class="golf-bg">Birdie Boyz</h1>
+    <h1 class="golf-bg">Birdie Boyz & Birdie Girl</h1>
     <ul class="nav-top" id="nav-home">
         <li><a href="{% url 'birdie_app:home' %}">Home</a></li>
         <li><a href="{% url 'birdie_app:bryan' %}">Bryan</a></li>
         <li><a href="{% url 'birdie_app:david' %}">David</a></li>
         <li><a href="{% url 'birdie_app:greg' %}">Greg</a></li>
+        <li><a href="{% url 'birdie_app:kara' %}">Kara</a></li>
         <li><a href="{% url 'birdie_app:steve' %}">Steve</a></li>
         <li><a href="{% url 'birdie_app:data' %}">Data</a></li>
     </ul>
     <img src="{% static 'BirdieBoyz.jpeg' %}" alt="Photo of the Birdie Boyz">
+    
+    <h4 id="group-total">2023 Group Total: {{ group2023 }} </h4>
+    
+    <h4 id="group-total">2022 Group Total: {{ group2022 }} </h4>
     
     <h4 id="group-total">2021 Group Total: {{ group2021 }} </h4>
     
@@ -32,6 +37,7 @@
             <option value="Bryan">Bryan</option>
             <option value="David">David</option>
             <option value="Greg">Greg</option>
+            <option value="Kara">Kara</option>
             <option value="Steve">Steve</option>
         </select>
         <br><br>
@@ -46,6 +52,7 @@
             <option value="Heron Lakes Great Blue">Heron Lakes Great Blue</option>
             <option value="Heron Lakes Greenback">Heron Lakes Greenback</option>
             <option value="Lewis River">Lewis River</option>
+            <option value="Mint Valley">Mint Valley</option>
             <option value="Riverside Golf Club">Riverside Golf Club</option>
             <option value="Tri Mountain">Tri Mountain</option>
             <option value="Other">Other</option>

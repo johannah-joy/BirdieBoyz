@@ -10,6 +10,7 @@ class Birdie(models.Model):
         ("Bryan", "Bryan"),
         ("David", "David"),
         ("Greg", "Greg"),
+        ("Kara", "Kara"),
         ("Steve", "Steve"),
     )
     player = models.CharField(max_length=10, null=True, blank=True, choices = players)
@@ -21,6 +22,7 @@ class Birdie(models.Model):
         ("Heron Lakes Great Blue", "Heron Lakes Great Blue"),
         ("Heron Lakes Greenback", "Heron Lakes Greenback"),
         ("Lewis River", "Lewis River"),
+        ("Mint Valley", "Mint Valley"),
         ("Riverside Golf Club", "Riverside Golf Club"),
         ("Tri Mountain", "Tri Mountain"),
         ("Other", "Other"),
