@@ -1,8 +1,23 @@
-# asgiref==3.2.10
+asgiref==3.3.1
+astroid==2.14.2
+backports.zoneinfo==0.2.1
+dill==0.3.6
 dj-database-url==0.5.0
-Django==3.0.8
+Django==3.1.13
 gunicorn==20.0.4
+isort==5.12.0
+lazy-object-proxy==1.9.0
+mccabe==0.7.0
+platformdirs==3.1.0
+psycopg2==2.9.5
 psycopg2-binary==2.8.5
-# pytz==2020.1
-# sqlparse==0.3.1
+pylint==2.16.3
+pylint-django==2.5.3
+pylint-plugin-utils==0.7
+pytz==2020.4
+sqlparse==0.4.1
+tomli==2.0.1
+tomlkit==0.11.6
+typing_extensions==4.5.0
 whitenoise==5.1.0
+wrapt==1.15.0
