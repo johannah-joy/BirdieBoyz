@@ -26,7 +26,7 @@ SECRET_KEY = '=j+t(@z0b1!xxp3gbhz6sabhof6=fjtungod%+vblns!2!#+in'
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', 'birdieboyz.herokuapp.com']
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', 'birdieboyz.herokuapp.com', web-production-0e938.up.railway.app]
 ALLOWED_HOSTS = ['*']
 
 
