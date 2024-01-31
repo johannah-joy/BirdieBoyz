@@ -16,7 +16,7 @@ class Birdie(models.Model):
     player = models.CharField(max_length=10, null=True, blank=True, choices = players)
     date = models.DateField(null=True)
     courses =(
-        ("Broadmoor", "Broadmoor"),
+        # ("Broadmoor", "Broadmoor"),
         ("Camas Meadows", "Camas Meadows"),
         ("Colwood", "Colwood"),
         ("Heron Lakes Great Blue", "Heron Lakes Great Blue"),
