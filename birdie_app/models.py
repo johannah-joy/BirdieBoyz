@@ -23,6 +23,7 @@ class Birdie(models.Model):
         ("Heron Lakes Greenback", "Heron Lakes Greenback"),
         ("Lewis River", "Lewis River"),
         ("Mint Valley", "Mint Valley"),
+        ("Portland Golf Club", "Portland Golf Club"),
         ("Riverside Golf Club", "Riverside Golf Club"),
         ("Tri Mountain", "Tri Mountain"),
         ("Other", "Other"),
