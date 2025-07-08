@@ -2,7 +2,7 @@ from django.urls import path
 from django.conf.urls import include, url
 # from django.views.generic import TemplateView
 from . import views
-from django.views.generic import RedirectView
+# from django.views.generic import RedirectView
 
 app_name = 'birdie_app'
 urlpatterns = [
@@ -17,5 +17,5 @@ urlpatterns = [
 
 urlpatterns += [
     url(r'^$', views.home, name='home'),
-    url(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')),
+    # url(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')),
 ]
